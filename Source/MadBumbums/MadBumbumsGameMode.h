@@ -13,6 +13,7 @@ class AMadBumbumsGameMode : public AGameModeBase
 
 public:
 	AMadBumbumsGameMode();
+	
 };
 
 

@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
+#include "UI/BaseCommonActionWidget.h"
 #include "MadBumbumsUI.generated.h"
 
 /**
@@ -12,7 +13,7 @@
  *  Widget setup is handled in a Blueprint subclass.
  */
 UCLASS(abstract)
-class MADBUMBUMS_API UMadBumbumsUI : public UUserWidget
+class MADBUMBUMS_API UMadBumbumsUI : public UBaseCommonActivatableWidget
 {
 	GENERATED_BODY()
 	

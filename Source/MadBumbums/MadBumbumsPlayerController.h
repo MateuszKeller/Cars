@@ -33,6 +33,7 @@ protected:
 	TSubclassOf<UMadBumbumsUI> VehicleUIClass;
 
 	/** Pointer to the UI widget */
+	UPROPERTY(VisibleInstanceOnly, BlueprintReadWrite)
 	TObjectPtr<UMadBumbumsUI> VehicleUI;
 
 	// Begin Actor interface

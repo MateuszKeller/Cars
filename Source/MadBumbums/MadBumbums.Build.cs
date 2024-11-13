@@ -8,6 +8,8 @@ public class MadBumbums : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput", "ChaosVehicles", "PhysicsCore" });
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput", "ChaosVehicles", "PhysicsCore", "CommonUI", "CommonInput", "UMG" });
+		
+		PublicDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });
 	}
 }

@@ -6,17 +6,19 @@
 #include "MadBumbumsUI.h"
 #include "EnhancedInputSubsystems.h"
 #include "ChaosWheeledVehicleMovementComponent.h"
+#include "UI/PrimaryLayout.h"
+#include "UI/UIManagerSubsystem.h"
 
 void AMadBumbumsPlayerController::BeginPlay()
 {
 	Super::BeginPlay();
 	
 	// spawn the UI widget and add it to the viewport
-	VehicleUI = CreateWidget<UMadBumbumsUI>(this, VehicleUIClass);
+	// VehicleUI = CreateWidget<UMadBumbumsUI>(this, VehicleUIClass);
 
-	check(VehicleUI);
+	// check(VehicleUI);
 
-	VehicleUI->AddToViewport();
+	// VehicleUI->AddToViewport();
 }
 
 void AMadBumbumsPlayerController::SetupInputComponent()
