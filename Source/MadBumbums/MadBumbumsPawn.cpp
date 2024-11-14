@@ -10,13 +10,16 @@
 #include "EnhancedInputSubsystems.h"
 #include "InputActionValue.h"
 #include "ChaosWheeledVehicleMovementComponent.h"
+#include "Components/AIReadyVehicleMovementComponent.h"
 
 #define LOCTEXT_NAMESPACE "VehiclePawn"
 
 DEFINE_LOG_CATEGORY(LogTemplateVehicle);
 
-AMadBumbumsPawn::AMadBumbumsPawn()
+AMadBumbumsPawn::AMadBumbumsPawn(const FObjectInitializer& ObjectInitializer)
+	// :Super(ObjectInitializer.SetDefaultSubobjectClass<UAIReadyVehicleMovementComponent>(AWheeledVehiclePawn::VehicleMovementComponentName))
 {
+	
 	// construct the front camera boom
 	FrontSpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("Front Spring Arm"));
 	FrontSpringArm->SetupAttachment(GetMesh());
@@ -105,6 +108,16 @@ void AMadBumbumsPawn::Tick(float Delta)
 	CameraYaw = FMath::FInterpTo(CameraYaw, 0.0f, Delta, 1.0f);
 
 	BackSpringArm->SetRelativeRotation(FRotator(0.0f, CameraYaw, 0.0f));
+}
+
+FVector AMadBumbumsPawn::GetSpeedLocationForAI_Implementation(AActor* Requester)
+{
+	return GetActorLocation();
+}
+
+FVector AMadBumbumsPawn::GetSteerLocationForAI_Implementation(AActor* Requester)
+{
+	return GetActorLocation();
 }
 
 void AMadBumbumsPawn::Steering(const FInputActionValue& Value)

@@ -16,5 +16,5 @@ class MADBUMBUMS_API AMadBumbumsSportsCar : public AMadBumbumsPawn
 	
 public:
 
-	AMadBumbumsSportsCar();
+	AMadBumbumsSportsCar(const FObjectInitializer& ObjectInitializer);
 };

@@ -7,3 +7,8 @@ AMadBumbumsGameMode::AMadBumbumsGameMode()
 {
 	PlayerControllerClass = AMadBumbumsPlayerController::StaticClass();
 }
+
+void AMadBumbumsGameMode::RegisterAsFollowTarget(AActor* Requester)
+{
+	FollowTarget = Requester; 
+}

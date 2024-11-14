@@ -7,7 +7,8 @@
 #include "ChaosWheeledVehicleMovementComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 
-AMadBumbumsOffroadCar::AMadBumbumsOffroadCar()
+AMadBumbumsOffroadCar::AMadBumbumsOffroadCar(const FObjectInitializer& ObjectInitializer)
+	:Super(ObjectInitializer)
 {
 	// construct the mesh components
 	Chassis = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Chassis"));

@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "WheeledVehiclePawn.h"
+#include "Interfaces/LocationForAIInterface.h"
 #include "MadBumbumsPawn.generated.h"
 
 class UCameraComponent;
@@ -22,7 +23,7 @@ DECLARE_LOG_CATEGORY_EXTERN(LogTemplateVehicle, Log, All);
  *  Specific vehicle configurations are handled in subclasses.
  */
 UCLASS(abstract)
-class AMadBumbumsPawn : public AWheeledVehiclePawn
+class AMadBumbumsPawn : public AWheeledVehiclePawn, public ILocationForAIInterface
 {
 	GENERATED_BODY()
 
@@ -79,7 +80,7 @@ protected:
 	bool bFrontCameraActive = false;
 
 public:
-	AMadBumbumsPawn();
+	AMadBumbumsPawn(const FObjectInitializer& ObjectInitializer);
 
 	// Begin Pawn interface
 
@@ -92,6 +93,13 @@ public:
 	virtual void Tick(float Delta) override;
 
 	// End Actor interface
+
+	// LocationForAI interface
+
+	virtual FVector GetSpeedLocationForAI_Implementation(AActor* Requester) override;
+	virtual FVector GetSteerLocationForAI_Implementation(AActor* Requester) override;
+
+	// LocationForAI interface
 
 protected:
 

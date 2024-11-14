@@ -38,11 +38,6 @@ void UBaseCommonActivatableWidget::NativeOnActivated()
 			}
 		}
 	}
-// TODO: DELETE IF WORKING ON NEWER UNREAL VERSIONS
-	if (const UCommonInputSubsystem* CommonInputSubsystem = UCommonInputSubsystem::Get(GetOwningLocalPlayer()))
-	{
-		CommonInputSubsystem->OnInputMethodChangedNative.Broadcast(CommonInputSubsystem->GetCurrentInputType());
-	}
 }
 
 void UBaseCommonActivatableWidget::NativeOnDeactivated()

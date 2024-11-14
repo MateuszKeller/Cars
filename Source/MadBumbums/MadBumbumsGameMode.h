@@ -13,7 +13,13 @@ class AMadBumbumsGameMode : public AGameModeBase
 
 public:
 	AMadBumbumsGameMode();
+
+	UFUNCTION(BlueprintCallable)
+	void RegisterAsFollowTarget(AActor* Requester);
+
 	
+	UPROPERTY(VisibleInstanceOnly, BlueprintReadWrite, Category="Runtime")
+	TObjectPtr<AActor> FollowTarget;
 };
 
 

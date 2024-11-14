@@ -6,7 +6,8 @@
 #include "MadBumbumsSportsWheelRear.h"
 #include "ChaosWheeledVehicleMovementComponent.h"
 
-AMadBumbumsSportsCar::AMadBumbumsSportsCar()
+AMadBumbumsSportsCar::AMadBumbumsSportsCar(const FObjectInitializer& ObjectInitializer)
+	:Super(ObjectInitializer)
 {
 	// Note: for faster iteration times, the vehicle setup can be tweaked in the Blueprint instead
 
